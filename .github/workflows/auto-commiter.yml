@@ -9,7 +9,8 @@ on:
 
 jobs:
   daily-commit:
-    if: ${{ env.ENABLE_CRON_JOB == 'true' }} # Only run if ENABLE_CRON_JOB is 'true'
+    # This is here because Ri doesn't want to run the cron job on his own account.
+    if: ${{ env.ENABLE_CRON_JOB == 'true' }}
     runs-on: ubuntu-latest
 
     steps:
