@@ -1,0 +1,41 @@
+ame: Daily GitHub Commits
+
+ on:
+   schedule:
+     - cron: '0 0 * * *' # This cron job will run daily at midnight UTC.
+   workflow_dispatch: # This allows you to manually trigger the workflow.
+
+ jobs:
+   daily-commit:
+     runs-on: ubuntu-latest
+
+     steps:
+     - name: Checkout repository
+       uses: actions/checkout@v3
+
+     - name: Set up Node.js
+       uses: actions/setup-node@v3
+       with:
+         node-version: '18'
+
+     - name: Read contributions.json and determine commits
+       id: determine_commits
+       run: |
+         TODAY=$(date '+%Y-%m-%d')
+         COMMIT_COUNT=$(jq -r --arg TODAY "$TODAY" '.[] | select(.date == $TODAY) | .level' public/contributions.json)
+         if [ -z "$COMMIT_COUNT" ]; then
+           COMMIT_COUNT=0
+         fi
+         echo "commit_count=$COMMIT_COUNT" >> $GITHUB_ENV
+     - name: Make the commits if needed
+       run: |
+         if [ $commit_count -gt 0 ]; then
+           for i in $(seq 1 $commit_count); do
+             echo "$(date) - Commit number $i" >> public/contributions-status.json
+             git add public/contributions-status.json
+             git commit -m "Daily commit $i on $(date)"
+           done
+           git push
+         else
+           echo "No commits needed for today."
+         fi
