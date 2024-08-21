@@ -9,6 +9,7 @@ on:
 
 jobs:
   daily-commit:
+    if: ${{ env.ENABLE_CRON_JOB == 'true' }} # Only run if ENABLE_CRON_JOB is 'true'
     runs-on: ubuntu-latest
 
     steps:
