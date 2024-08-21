@@ -10,7 +10,7 @@ on:
 jobs:
   daily-commit:
     # This is here because Ri doesn't want to run the cron job on his own account.
-    if: ${{ vars.ENABLE_CRON_JOB == 'true' }}
+    if: ${{ vars.ENABLE_CRON_JOB != 'false' }}
     runs-on: ubuntu-latest
 
     steps:
