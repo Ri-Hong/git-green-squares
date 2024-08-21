@@ -1,11 +1,11 @@
 # Git Green Squares 🟩
 
-[![Editor Demo Site](https://img.shields.io/badge/Visit-Demo%20Site-brightgreen)](https://dsgithub.trendmicro.com/pages/ri-hong/git-green-squares/)
+[![Editor Demo Site](https://img.shields.io/badge/Visit-Demo%20Site-brightgreen)](https://ri-hong.github.io/git-green-squares/)
 
 
 **Git Green Squares** is a fun and practical tool designed to automatically fill your GitHub contribution graph with green squares by making daily commits on your behalf. Whether you're looking to maintain a consistent streak or just want a more colorful profile, this tool has got you covered!
 
-Checkout the editor demo deployed on GitHub Pages at [Git Green Squares](https://dsgithub.trendmicro.com/pages/ri-hong/git-green-squares/).
+Checkout the editor demo deployed on GitHub Pages at [Git Green Squares](https://ri-hong.github.io/git-green-squares/).
 
 ## 🚀 Features
 
@@ -44,7 +44,7 @@ The built-in editor offers a variety of tools to help you design your perfect Gi
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://dsgithub.trendmicro.com/ri-hong/git-green-squares.git
+   git clone https://github.com/Ri-Hong/git-green-squares.git
    cd git-green-squares
    ```
 
