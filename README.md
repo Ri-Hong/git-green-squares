@@ -54,7 +54,7 @@ The built-in editor offers a variety of tools to help you design your perfect Gi
    ```
 
 3. **Customize Your Pattern**:
-   - Run `npm run dev` and head to [localhost:3000](http://localhost:3000) to see the editor.
+   - Run `npm run dev` and head to [http://localhost:3000/git-green-squares](http://localhost:3000/git-green-squares) to see the editor.
    - Use the editor to create your pattern and when you're done, **don't forget to hit save!**
 
 4. **Commit and Push**:
